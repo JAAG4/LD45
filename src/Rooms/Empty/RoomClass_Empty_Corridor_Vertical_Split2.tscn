@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/RoomClass.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tileset_Brick Placeholder.tres" type="TileSet" id=2]
+
+[node name="RoomClass" type="Node2D"]
+script = ExtResource( 1 )
+ConnectsUp = true
+ConnectsDown = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 3, 0, 0, 6, 0, 0, 9, 0, 0, 65536, 0, 0, 65539, 0, 0, 65542, 0, 0, 65545, 0, 0, 131072, 0, 0, 131075, 0, 0, 131078, 0, 0, 131081, 0, 0, 196608, 0, 0, 196611, 0, 0, 196614, 0, 0, 196617, 0, 0, 262144, 0, 0, 262147, 0, 0, 262150, 0, 0, 262153, 0, 0, 327680, 0, 0, 327683, 0, 0, 327686, 0, 0, 327689, 0, 0, 393216, 0, 0, 393219, 0, 0, 393222, 0, 0, 393225, 0, 0, 458752, 0, 0, 458755, 0, 0, 458758, 0, 0, 458761, 0, 0, 524288, 0, 0, 524291, 0, 0, 524294, 0, 0, 524297, 0, 0, 589824, 0, 0, 589827, 0, 0, 589830, 0, 0, 589833, 0, 0 )

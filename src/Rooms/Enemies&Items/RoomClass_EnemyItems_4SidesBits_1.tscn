@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/RoomClass.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tileset_Brick Placeholder.tres" type="TileSet" id=2]
+[ext_resource path="res://src/AmmoPickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/EnemyTurretSimple.tscn" type="PackedScene" id=4]
+
+[node name="RoomClass" type="Node2D"]
+script = ExtResource( 1 )
+ConnectsUp = true
+ConnectsDown = true
+ConnectsLeft = true
+ConnectsRight = true
+
+[node name="TileMap" type="TileMap" parent="." groups=[
+"Enviroment",
+]]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 3, 0, 0, 4, 0, 0, 5, 0, 0, 262144, 0, 0, 262153, 0, 0, 327680, 0, 0, 327689, 0, 0, 393216, 0, 0, 393225, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0 )
+
+[node name="AmmoPickup" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160, 160 )
+
+[node name="AmmoPickup3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 240, 240 )
+
+[node name="AmmoPickup2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 80, 80 )
+
+[node name="Turret Control" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 48 )
+ShotDirection = Vector2( 1, 0 )
+Cooldown = 0.7
+
+[node name="Turret Control2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 272 )
+Cooldown = 0.7

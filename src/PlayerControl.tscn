@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/PlayerControl.gd" type="Script" id=1]
+[ext_resource path="res://src/Character.tscn" type="PackedScene" id=2]
+
+[node name="PlayerControl" type="Node2D" groups=[
+"Player",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Player" parent="." groups=[
+"Player",
+] instance=ExtResource( 2 )]
+position = Vector2( 142, 104 )
+max_speed = 250
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+editor_draw_limits = true
+editor_draw_drag_margin = true

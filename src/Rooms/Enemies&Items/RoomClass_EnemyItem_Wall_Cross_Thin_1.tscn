@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/RoomClass.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tileset_Brick Placeholder.tres" type="TileSet" id=2]
+[ext_resource path="res://src/AmmoPickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/EnemyAIControlled.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/EnemyTurretSimple.tscn" type="PackedScene" id=5]
+
+[node name="RoomClass" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 4, 9, 0, 65540, 9, 0, 131076, 9, 0, 196612, 9, 0, 262144, 10, 0, 262145, 10, 0, 262146, 10, 0, 262147, 10, 0, 262148, 0, 0, 262149, 10, 0, 262150, 10, 0, 262151, 10, 0, 262152, 10, 0, 262153, 10, 0, 327684, 9, 0, 393220, 9, 0, 458756, 9, 0, 524292, 9, 0, 589828, 9, 0 )
+
+[node name="AmmoPickup" parent="." instance=ExtResource( 3 )]
+position = Vector2( 112, 112 )
+
+[node name="AmmoPickup2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 176, 112 )
+
+[node name="AmmoPickup3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 112, 176 )
+
+[node name="AmmoPickup4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 176, 176 )
+
+[node name="AIController" parent="." instance=ExtResource( 4 )]
+position = Vector2( 208, 80 )
+defaultLookDir = Vector2( 1, -1 )
+
+[node name="AIController2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80, 208 )
+defaultLookDir = Vector2( -1, 1 )
+
+[node name="Turret Control" parent="." instance=ExtResource( 5 )]
+position = Vector2( 80, 80 )
+ShotDirection = Vector2( -1, -1 )
+
+[node name="Turret Control2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 208, 208 )
+ShotDirection = Vector2( 1, 1 )

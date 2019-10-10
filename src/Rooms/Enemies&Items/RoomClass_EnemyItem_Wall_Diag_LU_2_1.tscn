@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/RoomClass.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tileset_Brick Placeholder.tres" type="TileSet" id=2]
+[ext_resource path="res://src/AmmoPickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/HealthPickup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/SpikedEnemy.tscn" type="PackedScene" id=5]
+
+[node name="RoomClass" type="Node2D"]
+script = ExtResource( 1 )
+ConnectsDown = true
+ConnectsRight = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 65536, 0, 0, 65537, 7, 0, 65544, 5, 0, 65545, 0, 0, 131072, 0, 0, 131081, 5, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 524289, 6, 0, 589824, 0, 0, 589825, 0, 0, 589826, 6, 0 )
+
+[node name="AmmoPickup" parent="." instance=ExtResource( 3 )]
+position = Vector2( 176, 176 )
+
+[node name="HealthPickup" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80, 80 )
+
+[node name="HealthPickup2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 150, 140 )
+
+[node name="SpikedEnemy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 120, 110 )
+
+[node name="SpikedEnemy2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 230, 210 )

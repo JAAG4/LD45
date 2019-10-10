@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/RoomsManager.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tileset_Brick Placeholder.tres" type="TileSet" id=2]
+[ext_resource path="res://src/PlayerControl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/debugPosLabel.gd" type="Script" id=4]
+[ext_resource path="res://src/Game UI Overlay.tscn" type="PackedScene" id=5]
+
+[node name="Base" type="Node2D"]
+script = ExtResource( 1 )
+Margin = 4
+
+[node name="BorderTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="PlayerControl" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="debugPosLabel" type="Label" parent="CanvasLayer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+script = ExtResource( 4 )
+
+[node name="RoomHolder" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource( 5 )]
+
+[editable path="PlayerControl"]
+
+[editable path="PlayerControl/Player"]

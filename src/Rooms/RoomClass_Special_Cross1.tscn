@@ -1,0 +1,47 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/RoomClass.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tileset_Brick Placeholder.tres" type="TileSet" id=2]
+[ext_resource path="res://src/Rooms/MagicSquare.gd" type="Script" id=3]
+[ext_resource path="res://assets/Magic Square_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/Magic Square_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/Magic Square_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/Magic Square_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/Magic Square_5.png" type="Texture" id=8]
+[ext_resource path="res://assets/Magic Square_6.png" type="Texture" id=9]
+[ext_resource path="res://assets/Magic Square_7.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="RoomClass" type="Node2D"]
+script = ExtResource( 1 )
+ConnectsUp = true
+ConnectsDown = true
+ConnectsLeft = true
+ConnectsRight = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 65536, 0, 0, 65544, 0, 0, 131072, 0, 0, 131080, 0, 0, 393216, 0, 0, 393224, 0, 0, 458752, 0, 0, 458760, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0 )
+
+[node name="MagicSquare" type="Area2D" parent="."]
+position = Vector2( 144, 144 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagicSquare"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MagicSquare"]
+frames = SubResource( 2 )
+frame = 1
+[connection signal="body_entered" from="MagicSquare" to="MagicSquare" method="_on_MagicSquare_body_entered"]
