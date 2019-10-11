@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/Character.gd" type="Script" id=1]
+[ext_resource path="res://src/Actors/Character.gd" type="Script" id=1]
 [ext_resource path="res://assets/BlockSprite-0003.png" type="Texture" id=2]
 [ext_resource path="res://assets/Arrow1-export.png" type="Texture" id=3]
 

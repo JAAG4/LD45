@@ -1,13 +1,16 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://src/PlayerControl.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/PlayerControl.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Tileset_Brick Placeholder.tres" type="TileSet" id=2]
 [ext_resource path="res://src/AmmoPickup.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/EnemyTurretSimple.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Actors/EnemyTurretSimple.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/HealthPickup.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/EnemyAIControlled.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/SpikedEnemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/Game UI Overlay.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Actors/EnemyAIControlled.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Actors/SpikedEnemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/User Interface/Game UI Overlay.tscn" type="PackedScene" id=8]
+
+
+
 
 [node name="Node" type="Node"]
 

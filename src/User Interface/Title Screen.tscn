@@ -1,9 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Title Screen.gd" type="Script" id=1]
+[ext_resource path="res://src/User Interface/Title Screen.gd" type="Script" id=1]
 [ext_resource path="res://assets/Sprite-0001.png" type="Texture" id=2]
 [ext_resource path="res://assets/BananaFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/banana-brick/BBrick.ttf" type="DynamicFontData" id=4]
+
+
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 24

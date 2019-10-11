@@ -2,9 +2,12 @@
 
 [ext_resource path="res://src/RoomsManager.gd" type="Script" id=1]
 [ext_resource path="res://assets/Tileset_Brick Placeholder.tres" type="TileSet" id=2]
-[ext_resource path="res://src/PlayerControl.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/debugPosLabel.gd" type="Script" id=4]
-[ext_resource path="res://src/Game UI Overlay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Actors/PlayerControl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/User Interface/debugPosLabel.gd" type="Script" id=4]
+[ext_resource path="res://src/User Interface/Game UI Overlay.tscn" type="PackedScene" id=5]
+
+
+
 
 [node name="Base" type="Node2D"]
 script = ExtResource( 1 )
