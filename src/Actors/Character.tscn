@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Actors/Character.gd" type="Script" id=1]
 [ext_resource path="res://assets/BlockSprite-0003.png" type="Texture" id=2]
 [ext_resource path="res://assets/Arrow1-export.png" type="Texture" id=3]
+[ext_resource path="res://assets/Lights/Light Circle1.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -31,3 +32,8 @@ offset = Vector2( 0, -32 )
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 4 )
+texture_scale = 0.5
+shadow_enabled = true

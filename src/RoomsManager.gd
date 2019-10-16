@@ -1,7 +1,7 @@
 extends Node2D
 
 const ROOM_SIZE := 12 # Actually is From 0 to 9 but this size avoids closed spaces that may trap the player
-
+const FLOOR_TILE :int= 11
 signal StartedGen
 signal StartedGenBorder
 signal FinishedGenBorder
@@ -198,9 +198,13 @@ func gen_dungeon_borders():
 		TileMap.set_cell(i , BorderSize.y+Margin , 0)
 
 	#Vertical Border
-	for j in range(-Margin,BorderSize.y+Margin):
-		TileMap.set_cell(-Margin , j , 0)
-		TileMap.set_cell(BorderSize.x+Margin , j , 0)
+	for ii in range(-Margin,BorderSize.y+Margin):
+		TileMap.set_cell(-Margin , ii , 0)
+		TileMap.set_cell(BorderSize.x+Margin , ii , 0)
+
+	for i in range(1-Margin,BorderSize.x+Margin-1):
+		for j in range(1-Margin,BorderSize.y+Margin-1):
+			TileMap.set_cell(i,j,FLOOR_TILE)
 
 	emit_signal("FinishedGenBorder")
 
