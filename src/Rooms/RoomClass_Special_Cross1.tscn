@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/RoomClass.gd" type="Script" id=1]
 [ext_resource path="res://assets/Tileset_Brick Placeholder.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/Magic Square_5.png" type="Texture" id=8]
 [ext_resource path="res://assets/Magic Square_6.png" type="Texture" id=9]
 [ext_resource path="res://assets/Magic Square_7.png" type="Texture" id=10]
+[ext_resource path="res://assets/Lights/Light Circle1.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -20,6 +21,23 @@ animations = [ {
 "name": "default",
 "speed": 12.0
 } ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "glow"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:texture_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 2.0, 1.0 ]
+}
 
 [node name="RoomClass" type="Node2D"]
 script = ExtResource( 1 )
@@ -44,4 +62,13 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MagicSquare"]
 frames = SubResource( 2 )
 frame = 1
+
+[node name="Light2D" type="Light2D" parent="MagicSquare"]
+texture = ExtResource( 11 )
+texture_scale = 1.40276
+color = Color( 0.196078, 1, 0.392157, 1 )
+shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MagicSquare"]
+anims/glow = SubResource( 3 )
 [connection signal="body_entered" from="MagicSquare" to="MagicSquare" method="_on_MagicSquare_body_entered"]

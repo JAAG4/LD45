@@ -202,8 +202,8 @@ func gen_dungeon_borders():
 		TileMap.set_cell(-Margin , ii , 0)
 		TileMap.set_cell(BorderSize.x+Margin , ii , 0)
 
-	for i in range(1-Margin,BorderSize.x+Margin-1):
-		for j in range(1-Margin,BorderSize.y+Margin-1):
+	for i in range(1-Margin,BorderSize.x+Margin):
+		for j in range(1-Margin,BorderSize.y+Margin):
 			TileMap.set_cell(i,j,FLOOR_TILE)
 
 	emit_signal("FinishedGenBorder")

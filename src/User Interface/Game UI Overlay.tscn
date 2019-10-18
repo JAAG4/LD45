@@ -9,7 +9,7 @@
 [ext_resource path="res://src/User Interface/CenterContainer.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 10
+size = 12
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
